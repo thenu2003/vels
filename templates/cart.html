@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecom</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<style>
+     .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .cart-item img {
+            max-width: 80px; /* Decreased image size */
+            margin-right: 10px;
+        }
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+        }
+        .quantity-controls img {
+            width: 20px;
+            cursor: pointer;
+        }
+        .box-element {
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .checkout-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .continue-shopping {
+            margin-bottom: 10px;
+        }
+        .cart-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .cart-row > div {
+            flex: 1;
+            text-align: center;
+        }
+        .cart-row > div:nth-child(2),
+        .cart-row > div:nth-child(3) {
+            flex: 5;
+            margin-left: 5px;
+            text-align: center;
+        }
+        .cart-row > div:nth-child(4),
+        .cart-row > div:nth-child(5) {
+            flex: 1;
+            text-align: center;
+        }
+        .cart-row img {
+            max-width: 60px; 
+            margin-right: 10px;
+        }
+        .cart-row p {
+            margin: 0; 
+        }
+
+        .move-strong {
+           margin: 0px; 
+           margin-right: 70px;
+        }
+
+        .monkey-hi {
+            margin: auto;
+            margin-right: 90px;
+
+        }
+
+</style>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Ecom</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Store<span class="sr-only">(current)</span></a>
+            </li>
+
+          <form class="form-inline my-2 my-lg-0 mr-3">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          <button class="btn btn-warning my-2 my-sm-0">Login</button>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-12">
+                
+                <div class="continue-shopping">
+                    <a class="btn btn-outline-dark" onclick="continueShopping()">&#x2190; Continue Shopping</a>
+                </div>
+
+               
+                <div class="box-element">
+                    <div class="checkout-buttons">
+                        <div class="items">
+                            <h5>Items: <strong>3</strong></h5>
+                        </div>
+                        <div class="total">
+                            <h5>Total:<strong> $2510</strong></h5>
+                        </div>
+                        <div class="checkout">
+                            <a class="btn btn-success"  onclick="redirectToCheckout()">Checkout</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-element">
+                    <div class="cart-row">
+                        <div><strong class="move-strong">Item</strong></div>
+                        <div><strong class ="move-strong">Price</strong></div>
+                        <div><strong class = "move-strong">Quantity</strong></div>
+                        <div><strong class = "move-strong">Total</strong></div>
+                    </div>
+                    
+                    <div class="cart-row">
+                        <div><img class="row-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkLzzJBTARBQGdJNVBoeh0Y_L7svE8jR2eDA&usqp=CAU"></div>
+                        <div>
+                            <p>$<strong>250</strong></p>
+                        </div>
+                        <div>
+                            <p class="quantity"><strong>1</strong></p>
+                        </div>
+
+                        <div>
+                            <p>$<strong class = "money-hi">250</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="cart-row">
+                        <div><img class="row-image" src="https://www.contemporist.com/wp-content/uploads/2015/10/tree-bag_281015_01.jpg"></div>
+                        <div>
+                            <p>$<strong>500</strong></p>
+                        </div>
+                        <div>
+                            <p class="quantity"><strong>2</strong></p>
+                        </div>
+                        <div>
+                            <p class="money-hi">$<strong>1000</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="cart-row">
+                        <div><img class="row-image" src="https://www.starhealth.in/blog/wp-content/uploads/2022/12/cropped-1-1.jpg"></div>
+                        <div>
+                            <p class = "money-hi">$<strong>450</strong></p>
+                        </div>
+                        <div>
+                            <p class="quantity"><strong>2</strong></p>
+                        </div>
+                        <div>
+                            <p class="money-hi">$<strong>900</strong></p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function redirectToCheckout() {
+            window.location.href = "checkout.html";
+        }
+
+        function continueShopping() {
+            window.location.href = "store.html";
+        }
+</script>
+</html>

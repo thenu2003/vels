@@ -1,0 +1,264 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FIR Analysis</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <style>
+      
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background-image: url('{% static "images/download.jpeg" %}');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+    header {
+      background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+      color: #0e7815;
+      padding: 20px;
+      height: 1.5cm;
+      width: 100%;
+      display: flex;
+      justify-content: center; /* Center content horizontally */
+      align-items: center;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      border-bottom: 1px solid #dddddd;
+      box-shadow: 0 0 10px rgba(232, 232, 232, 0.5), 0 0 20px rgba(232, 232, 232, 0.3), 0 0 40px rgba(232, 232, 232, 0.2), 0 0 80px rgba(232, 232, 232, 0.1);
+    }
+
+    .logo {
+      max-height: 70px;
+      max-width: 100%;
+      margin-right: 50px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      height: 80vh;
+      overflow: hidden;
+    }
+
+    .slideshow-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+      filter: brightness(70%);
+      transition: opacity 0.8s ease;
+    }
+
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 36px;
+      text-align: center;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      white-space: nowrap;
+      animation: scrollingText 10s linear infinite;
+    }
+
+    .feature-container {
+      position: relative; /* Add position property to the container for z-index to work */
+      padding: 100px;
+      margin-top: 20px; /* Add margin to move the features down */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .feature {
+      position: relative; /* Add position property for z-index */
+      max-width: 300px;
+      background-color: #fff;
+      margin: 15px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.1), 0 0 80px rgba(0, 0, 0, 0.1); /* Add glowing effect with increased density */
+      text-align: center;
+      transition: box-shadow 0.3s ease; /* Add smooth transition for box-shadow on hover */
+      opacity: 0; /* Hide features initially */
+      z-index: 0; /* Set initial z-index */
+    }
+
+    .feature:first-child {
+      animation: fadeInUp 3s ease forwards; /* Animation for the first feature */
+    }
+
+    .feature:nth-child(2) {
+      animation: fadeInUp 3s ease 0.5s forwards; /* Animation for the second feature with a 0.5s delay */
+    }
+
+    .feature:last-child {
+      animation: fadeInUp 3s ease 1s forwards; /* Animation for the third feature with a 1s delay */
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 5;
+        transform: translateY(10);
+      }
+    }
+
+    .feature:hover {
+      transform: translateY(-5px); /* Slightly move the feature up on hover */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 0 30px rgba(0, 0, 0, 0.1), 0 0 60px rgba(0, 0, 0, 0.1), 0 0 120px rgba(0, 0, 0, 0.1); /* Add glowing effect on hover */
+      z-index: 1; /* Bring the feature to the front on hover */
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px; /* Slightly reduced margin for button container */
+    }
+
+    .button {
+      margin: 0 10px;
+      padding: 10px 30px; /* Reduced padding for smaller buttons */
+      background-color: #0e7815;
+      border: none;
+      color: white;
+      font-size: 20px; /* Slightly smaller font size */
+      text-decoration: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #02481d;
+    }
+
+    footer {
+      background: linear-gradient(to right, rgb(251, 250, 250), rgb(255, 255, 255));
+      padding: 10px;
+      text-align: center;
+      color: rgb(255, 255, 255);
+      position: fixed; /* Set position to fixed */
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 0;
+    }
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white; /* Set text color to white */
+      font-size: 36px;
+      text-align: center;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      white-space: nowrap;
+      animation: scrollingText 10s linear infinite;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <header>
+    <!-- Replace 'path_to_your_logo_image' with the path to your actual logo or image -->
+    <h1>Coconut</h1>
+    <style> 
+       header {
+            text-align: center;
+       }
+    </style>
+  </header>
+
+  <div class="feature-container">
+    <div class="feature">
+      <h2 style="color: green;">Dashboard</h2>
+      <p>This dashboard forecasts the number of people corresponding to carbon emissions, aiding in environmental analysis </p>
+      <button class="button" onclick="redirectToDashboard()">Go to Dashboard</button>
+      
+    </div>
+    <div class="feature">
+      <h2 style="color: green;">Small Vendor - Shopping</h2>
+      <p>shopping cart that forecast the small vendor - mart </p>
+      <a href="cart.html" class="button">click</a>
+    </div>
+    <div class="feature">
+      <h2 style="color: green;">Map-locate</h2>
+      <p>Map location that forecast the location of the device.</p>
+      <button class="button" onclick="redirectToDashboard()">Go to Maps</button>
+
+    </div>
+  </div>
+
+  <div class="button-container">
+    <a href="login.html" class="button">Login</a>
+  </div>
+
+  
+
+  <script>
+    var slideIndex = 1; // Start from the first slide
+    var slideshowTimeout;
+
+    showSlides(slideIndex);
+
+    function redirectToDashboard() {
+    window.location.href = 'http://localhost:8501/';
+  }
+
+    function showSlides(n) {
+      var text = document.getElementsByClassName("text")[0];
+
+      text.style.opacity = 1;
+
+      slideIndex++;
+      if (slideIndex > 3) {
+        slideIndex = 1;
+      }
+
+      clearTimeout(slideshowTimeout);
+      slideshowTimeout = setTimeout(function() {
+        showSlides(slideIndex);
+      }, 5000); // Change slide every 5 seconds
+    }
+
+    function currentSlide(n) {
+      clearTimeout(slideshowTimeout);
+      showSlides(slideIndex = n);
+      setTimeout(function() {
+        showSlides(slideIndex);
+      }, 5000); // Display next text after 5 seconds
+
+    }
+  </script>
+</body>
+</html>

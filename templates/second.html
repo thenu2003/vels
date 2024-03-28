@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #000000;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            align-items: center;
+            display:inline-block;
+            opacity: 1.0;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        h2, p {
+            font-family: 'Poppins';
+            color: #f4f4f4;
+        }
+
+        #resendLink {
+            color: #2196F3;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>OTP Verification</h2>
+    <p>An OTP has been sent to your phone number. Please enter it below:</p>
+
+    <input type="text" id="otpInput" placeholder="Enter OTP">
+    <button onclick="verifyOTP()">Verify OTP</button>
+
+    <p id="error" style="color: red;"></p>
+    <p id="timer"></p>
+</div>
+
+<div>
+    <span id="resendLink" onclick="resendOTP()">Resend OTP</span>
+</div>
+
+<script>
+    let generatedOTP;
+    let countdown;
+
+    function generateOTP() {
+        generatedOTP = Math.floor(1000 + Math.random() * 9000);
+        alert("Simulated OTP: " + generatedOTP);
+    }
+
+    function resendOTP() {
+        generateOTP();
+        startTimer();
+        document.getElementById("error").innerText = "";
+    }
+
+    function startTimer() {
+        let seconds = 60;
+        clearInterval(countdown); 
+        countdown = setInterval(function () {
+            document.getElementById("timer").innerText = `Resend OTP in ${seconds} seconds`;
+            seconds--;
+
+            if (seconds < 0) {
+                clearInterval(countdown);
+                document.getElementById("timer").innerText = "";
+            }
+        }, 1000);
+    }
+
+    function verifyOTP() {
+        const enteredOTP = document.getElementById("otpInput").value;
+
+        if (enteredOTP === "") {
+            showError("Please enter the OTP.");
+        } else if (enteredOTP.length !== 4 || isNaN(enteredOTP)) {
+            showError("Invalid OTP. Please enter a 4-digit number.");
+        } else if (parseInt(enteredOTP) === generatedOTP) {
+            clearInterval(countdown);
+            alert("OTP Verified successfully!");
+        } else {
+            showError("Incorrect OTP. Please try again.");
+        }
+    }
+
+    function showError(message) {
+        document.getElementById("error").innerText = message;
+    }
+    generateOTP();
+    startTimer();
+</script>
+
+</body>
+</html>

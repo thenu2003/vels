@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecom</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Ecom</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Store<span class="sr-only">(current)</span></a>
+            </li>
+
+          <form class="form-inline my-2 my-lg-0 mr-3">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          <button class="btn btn-warning my-2 my-sm-0">Login</button>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="box-element">
+                <form id="form">
+                    <div id="user-info">
+                        <div class="form-field">
+                            <input required class="form-control" type="text" name="name" placeholder="Name..">
+                        </div>
+                        <div class="form-field">
+                            <input required class="form-control" type="email" name="email" placeholder="Email..">
+                        </div>
+                    </div>
+
+                    <div id="shipping-info">
+                        <hr>
+                        <p>Shipping Information:</p>
+                        <hr>
+                        <div class="form-field">
+                            <input class="form-control" type="text" name="address" placeholder="Address..">
+                        </div>
+                        <div class="form-field">
+                            <input class="form-control" type="text" name="city" placeholder="City..">
+                        </div>
+                        <div class="form-field">
+                            <input class="form-control" type="text" name="state" placeholder="State..">
+                        </div>
+                        <div class="form-field">
+                            <input class="form-control" type="text" name="zipcode" placeholder="Zip code..">
+                        </div>
+                        <div class="form-field">
+                            <input class="form-control" type="text" name="country" placeholder="Country..">
+                        </div>
+                    </div>
+
+                    <hr>
+                    <input id="form-button" class="btn btn-success btn-block" type="submit" value="Continue" onclick="continuebutton()">
+                </form>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="box-element">
+                <a  class="btn btn-outline-dark" onclick="backtocart()">&#x2190; Back to Cart</a>
+                <hr>
+                <h3>Order Summary</h3>
+                <hr>
+                <div class="cart-row d-flex align-items-center">
+                    <div class="row-image"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkLzzJBTARBQGdJNVBoeh0Y_L7svE8jR2eDA&usqp=CAU"></div>
+                    <div class="product-info">
+                        <p class="mr-3">-Coconut Bowl</p>
+                        <p class="mr-3">$250.00</p>
+                    </div>
+                </div>
+                <h5>Items:   2</h5>
+                <h5>Total:   $500</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    function backtocart(){
+        window.location.href = "cart.html";
+    }
+    function continuebutton(){
+        window.location.href="order.html";
+    }
+</script>
+</html>

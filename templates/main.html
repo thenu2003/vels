@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecom</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+        /* Custom styling */
+        .product {
+            border: 1px solid #dee2e6;
+            margin-bottom: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Ecom</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Store<span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+              </li>
+        
+            </ul>
+          
+          <form class="form-inline my-2 my-lg-0 mr-3">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          <button class="btn btn-warning my-2 my-sm-0">Login</button>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="product">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkLzzJBTARBQGdJNVBoeh0Y_L7svE8jR2eDA&usqp=CAU" class="img-fluid" alt="Product Image">
+                    <h5 class="mt-3">Coconut Bowl</h5>
+                    <p class="text-muted">$250</p>
+                    <button class="btn btn-outline-secondary">Add to Cart</button>
+                    <button class="btn btn-outline-success ml-2">View Details</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="product">
+                    <img src="https://www.contemporist.com/wp-content/uploads/2015/10/tree-bag_281015_01.jpg" class="img-fluid" alt="Product Image">
+                    <h5 class="mt-3">Coconut Bags</h5>
+                    <p class="text-muted">$500</p>
+                    <button class="btn btn-outline-secondary">Add to Cart</button>
+                    <button class="btn btn-outline-success ml-2">View Details</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="product">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMWhEl1V1nGOJjtw_4Jb9mtHyetz-y2zAAsQ&usqp=CAU" class="img-fluid" alt="Product Image">
+                    <h5 class="mt-3">Coconut Lotion</h5>
+                    <p class="text-muted">$700</p>
+                    <button class="btn btn-outline-secondary">Add to Cart</button>
+                    <button class="btn btn-outline-success ml-2">View Details</button>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-lg-4">
+                <div class="product">
+                    <img src="https://www.starhealth.in/blog/wp-content/uploads/2022/12/cropped-1-1.jpg" class="img-fluid" alt="Product Image">
+                    <h5 class="mt-3">Coconut Oil</h5>
+                    <p class="text-muted">$450</p>
+                    <button class="btn btn-outline-secondary">Add to Cart</button>
+                    <button class="btn btn-outline-success ml-2">View Details</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="product">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSRxWAT_5x32InVB-SDRn8K6iMNABj1FgS8A&usqp=CAU" class="img-fluid" alt="Product Image">
+                    <h5 class="mt-3">Coconut Soap</h5>
+                    <p class="text-muted">$200</p>
+                    <button class="btn btn-outline-secondary">Add to Cart</button>
+                    <button class="btn btn-outline-success ml-2">View Details</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="product">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/XN/QZ/LB/9050833/coir-rope-500x500.jpg" class="img-fluid" alt="Product Image">
+                    <h5 class="mt-3">Coconut Ropes</h5>
+                    <p class="text-muted">$150</p>
+                    <button class="btn btn-outline-secondary">Add to Cart</button>
+                    <button class="btn btn-outline-success ml-2">View Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
